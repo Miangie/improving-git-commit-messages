@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#
+# This hook takes bad, old, hard to use with OCR commit message
+# and converts it to glorious iso/iec 18004 QR Code encoded with
+# UTF-8 characters for maximum portability
+# 
+
+qrencode -t UTF8 < $1 > $1.qr
+mv $1.qr $1
+
